@@ -40,6 +40,9 @@ print(f"Model Accuracy: {accuracy:.2f}")
 
 #take user input for make predictions
 user_age = float(input("Enter the age: "))
+if user_age < 18 or user_age > 60:
+    print("Age should be greater than 18 and less than 60.")
+    exit()
 user_timespent = float(input("Enter the time spent: "))
 user_addtocart = float(input("Enter the number of items added to cart: "))
 
