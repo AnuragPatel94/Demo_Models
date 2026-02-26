@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 
 np.random.seed(42)
 
-# Generate 1000 samples
+# Generate 100 samples
 n_samples = 100
 
 data = {
