@@ -21,12 +21,12 @@ churn = np.where((data['recharge_amount'] < 300) & (data['per month reacharge'] 
 df = pd.DataFrame(data)
 df['churn'] = churn
 print(df.head())
-df.to_csv('data/churn_data.csv', index=False)
+df.to_csv('data/Telecome_churn_data.csv', index=False)
 
 print(f"Generated {len(df)} samples")
 
 # read the data
-df = pd.read_csv('data/churn_data.csv')
+df = pd.read_csv('data/Telecome_churn_data.csv')
 
 # extract features and target variable
 X = df[['age', 'recharge_amount', 'per month reacharge']]

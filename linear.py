@@ -13,11 +13,11 @@ data = {
     'exam_score': np.random.uniform(50, 95, n_samples),
     }
 df = pd.DataFrame(data)
-df.to_csv('data/score_data.csv', index=False)
+df.to_csv('data/Exam_score_data.csv', index=False)
 print(f"Generated {len(df)} samples")
 
 # read the data
-df = pd.read_csv('data/score_data.csv')
+df = pd.read_csv('data/Exam_score_data.csv')
 
 #extract features and target variable
 X = df[['hours_study']]

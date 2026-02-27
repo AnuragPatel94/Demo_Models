@@ -19,11 +19,11 @@ sentiment = np.where(data['addtocart'] > 1, 1, 0)
 df = pd.DataFrame(data)
 df['sentiment'] = sentiment
 print(df.head())
-df.to_csv('data/cust_sentiment_data.csv', index=False)
+df.to_csv('data/Ecom_cust_sentiment_data.csv', index=False)
 print(f"Generated {len(df)} samples")
 
 # read the data
-df = pd.read_csv('data/cust_sentiment_data.csv')
+df = pd.read_csv('data/Ecom_cust_sentiment_data.csv')
 
 # extract features and target variable
 X = df[['age', 'timespent', 'addtocart']]
