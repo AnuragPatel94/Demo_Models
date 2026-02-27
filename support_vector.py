@@ -9,8 +9,8 @@ from sklearn.metrics import classification_report
 from sklearn.svm import SVC
 np.random.seed(42)
 
-# Generate 800 samples
-n_samples = 800
+# Generate 1000 samples
+n_samples = 1000
 data = {
     'age': np.random.randint(25, 60, n_samples),
     'recharge_amount': np.random.randint(150, 600, n_samples),
