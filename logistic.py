@@ -1,3 +1,5 @@
+# business problem statement: predict the sentiment of customers based on their age, 
+# time spent on the website, and the number of items added to the cart.
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -53,5 +55,8 @@ prediction = model.predict(user_data)
 if prediction[0] == 1:
     print("likely to purchase")
 else:    print("not likely to purchase")
+
+
+
 
     
