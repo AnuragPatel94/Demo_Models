@@ -10,7 +10,7 @@ np.random.seed(42)
 n_samples = 500
 data = {
     'age': np.random.randint(18, 60, n_samples),
-    'timespent': np.random.randint(30, 60, n_samples),
+    'timespent': np.random.randint(10, 60, n_samples),
     'addtocart': np.random.poisson(lam=1, size=n_samples)
 }
 
@@ -46,6 +46,9 @@ if user_age < 18 or user_age > 60:
     print("Age should be greater than 18 and less than 60.")
     exit()
 user_timespent = float(input("Enter the time spent: "))
+if user_timespent < 10 or user_timespent > 60:
+    print("Time spent should be greater than 10 and less than 60.")
+    exit()
 user_addtocart = float(input("Enter the number of items added to cart: "))
 
 #input set into array and make prediction
