@@ -8,7 +8,7 @@ WORKDIR /app
 COPY data/ /app/data/
 
 # Copy model scripts
-COPY linear.py logistic.py support_vector.py /app/
+COPY support_vector.py /app/
 
 # Copy requirements
 COPY requirements.txt /app/
