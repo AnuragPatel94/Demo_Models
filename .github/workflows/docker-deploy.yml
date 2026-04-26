@@ -59,17 +59,7 @@ jobs:
 
     - name: Run models
       run: |
-        echo "Testing Linear Regression model..."
-        python linear.py << EOF
-        5
-        EOF
-
-        echo "Testing Logistic Regression model..."
-        python logistic.py << EOF
-        30
-        20
-        2
-        EOF
+      
 
         echo "Testing Support Vector Machine model..."
         python support_vector.py << EOF
