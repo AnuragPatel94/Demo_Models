@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 from sklearn.svm import SVC
+import joblib
 np.random.seed(42)
 
 # Generate 1000 samples
@@ -39,6 +40,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = SVC(kernel='linear', C=1.0)
 model.fit(X_train, y_train)
 
+# Save the model
+joblib.dump(model, 'churn_model.pkl')
+
 #test the model
 y_pred = model.predict(X_test)
 
@@ -49,29 +53,5 @@ print(f"Model Accuracy: {accuracy:.2f}")
 #print report
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
-
-#take user input for make predictions
-user_age = float(input("Enter the age: "))
-if user_age < 25 or user_age > 60:
-    print("Age should be greater than 25 and less than 60.")
-    exit()
-
-user_monthly_recharge = float(input("Enter the monthly recharge amount: "))
-if user_monthly_recharge < 150 or user_monthly_recharge > 600:
-    print("Recharge amount should be between 150 and 600.")
-    exit()
-
-user_times_recharged = float(input("Enter the number of times recharged in a month: "))
-if user_times_recharged < 0:
-    print("Number of times recharged cannot be negative.")
-    exit()
-
-#input set into array and make prediction
-user_data=np.array([[user_age, user_monthly_recharge, user_times_recharged]])   
-prediction = model.predict(user_data)
-if prediction[0] == 1:
-    print("The customer is likely to churn.")
-else:
-    print("The customer is not likely to churn.")
 
 
